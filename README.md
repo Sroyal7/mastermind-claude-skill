@@ -4,6 +4,8 @@
 
 A one-file skill for Claude Cowork that transforms Claude from an answer machine into a strategic thinking partner. Modeled on **The Professor** from *Money Heist* — not the character, but the cognitive discipline: reframe before solving, challenge assumptions unprompted, think several moves ahead, always land a calibrated recommendation even when information is incomplete.
 
+**Pairs with the [Decision Frameworks skill](#-mastermind--decision-frameworks-the-full-stack) for high-stakes calls.**
+
 ---
 
 ## The Difference It Makes
@@ -38,6 +40,22 @@ Same question. Same Claude. Two completely different answers.
 
 **What that is:** Reframed the question, named the driving assumption, surfaced the thing you hadn't asked, gave one concrete recommendation — not a framework.
 
+**→ See [DEMO.md](./DEMO.md) for 3 full before/after examples across Career, Business Strategy, and Plan Evaluation.**
+
+---
+
+## Who This Is For
+
+| If you are... | Mastermind helps you... |
+|---|---|
+| **Founder / builder** | Cut through your own confirmation bias before committing to a direction |
+| **Consultant / freelancer** | Give clients the uncomfortable truth, not the comfortable answer |
+| **Career switcher** | Make irreversible moves (quit, pivot, relocate) with evidence instead of anxiety |
+| **Content creator** | Evaluate your strategy rather than just execute it |
+| **Anyone with a hard decision** | Get one calibrated recommendation instead of a list of things to "consider" |
+
+Not useful for: factual lookups, syntax questions, casual conversation, emotional support with no decision attached.
+
 ---
 
 ## What It Does (The 10-Step Method)
@@ -57,16 +75,63 @@ The skill encodes a thinking protocol that runs silently before every response:
 
 ---
 
+## Standard Claude vs. Mastermind vs. Full Stack
+
+| Behavior | Standard Claude | Mastermind | Mastermind + Decision Frameworks |
+|---|---|---|---|
+| Opens with | Restates your question | Reframes it | Reframes + gates the facts first |
+| Wrong premises | Answers around them | Names them directly | Names them + runs `/premortem` to find what else is wrong |
+| Options given | Lists 4–6 equally | One recommendation | One recommendation + `/scenarios` for the branches |
+| Uncertainty | "It depends" + caveats | Calibrated call + what changes it | Calibrated call + base rates + adversarial stress test |
+| Unasked issues | Rarely surfaces them | By design, every time | By design + `/blindspot` for structured unknown-unknown scan |
+| Best for | General questions | Tactical to mid-stakes decisions | Irreversible, high-stakes, or adversarial situations |
+
+**→ See [DECISION_FRAMEWORKS.md](./DECISION_FRAMEWORKS.md) for the combined protocol and a full worked example.**
+
+---
+
+## The Decision Flow
+
+```
+Your question
+     │
+     ▼
+ /mastermind
+(Reframe → Challenge assumption → Surface unasked → Recommend)
+     │
+     ├─── Moderate stakes, reversible ──→ Done. Act on it.
+     │
+     └─── High stakes / irreversible ──→ Escalate
+               │
+               ▼
+         /gate  (Are the facts solid enough?)
+               │
+               ▼
+         /baserates  (What usually happens here?)
+               │
+               ▼
+         Pick 1–2 frameworks:
+         /premortem  → What kills this?
+         /redteam    → How does an adversary break it?
+         /blindspot  → What haven't we considered?
+         /scenarios  → What if the future looks different?
+               │
+               ▼
+         Final calibrated call with confidence tags
+```
+
+---
+
 ## Install (Claude Cowork)
 
 **Requires:** [Claude Cowork desktop app](https://claude.ai/download)
 
-### Option A — .skill file (Recommended)
+### Option A — .skill file (Recommended, 60 seconds)
 
 1. Download [`mastermind.skill`](./mastermind.skill) from this repo
 2. Open Claude Cowork → **Settings → Capabilities → Skills**
 3. Click **Install from file** → select the `.skill` file
-4. Done.
+4. Done. Type `/mastermind` in any session.
 
 ### Option B — Manual
 
@@ -90,6 +155,28 @@ what's the real problem here
 
 ---
 
+## ⚡ Mastermind + Decision Frameworks: The Full Stack
+
+For high-stakes, irreversible decisions, pair this skill with the **Decision Frameworks skill** — 20 structured analytical tools that run when Mastermind's fast read isn't enough.
+
+The combination gives you:
+- **Mastermind** for the fast strategic read (reframe, challenge, recommend)
+- **Decision Frameworks** for the deep audit (premortem, red team, base rates, war-gaming, blindspot scan)
+
+**Install both, then use this sequence:**
+
+```
+1. /mastermind    → Fast read. Most decisions end here.
+2. /gate          → Are the facts good enough to analyze?
+3. /baserates     → What usually happens to cases like this?
+4. /premortem     → What kills this if we commit?
+5. /redteam       → How would an adversary break it?
+```
+
+**→ Full protocol, 20 commands, and a worked example in [DECISION_FRAMEWORKS.md](./DECISION_FRAMEWORKS.md)**
+
+---
+
 ## When to Use It
 
 | Use Mastermind for | Skip it for |
@@ -99,19 +186,6 @@ what's the real problem here
 | Evaluating plans (finding the weak assumption) | Simple one-step tasks |
 | Cutting through over-complication | Emotional support with no decision |
 | Interpersonal situations | Casual conversation |
-
----
-
-## Standard Claude vs. Mastermind Claude
-
-| Behavior | Standard Claude | Mastermind Claude |
-|---|---|---|
-| Opens with | Restates your question | Reframes it |
-| Wrong premises | Answers around them | Names them directly |
-| Number of options | Lists 4–6 equally | One recommendation, the best one |
-| Uncertainty | "It depends" + caveats | Calibrated call + what would change it |
-| Unasked issues | Rarely surfaces them | By design, every time |
-| Confidence level | Sounds confident always | Tagged: Verified / Reasoned / Assumed / Unknown |
 
 ---
 
@@ -133,9 +207,11 @@ Modeled on **Sergio Marquina (The Professor)** from *Money Heist* — the thinki
 
 | File | What it is |
 |---|---|
-| `README.md` | Overview, before/after demo, install guide |
+| `README.md` | This file — overview, before/after, install guide |
 | `SKILL.md` | Full skill prompt — copy this for manual install |
-| `mastermind.skill` | Installable file for Claude Cowork |
+| `mastermind.skill` | Installable `.skill` file for Claude Cowork |
+| `DEMO.md` | 3 full before/after examples (career, business, plan evaluation) |
+| `DECISION_FRAMEWORKS.md` | Combined Mastermind + Decision Frameworks protocol + worked example |
 | `LICENSE` | MIT |
 
 ---
