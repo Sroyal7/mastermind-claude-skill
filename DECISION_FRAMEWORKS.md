@@ -139,7 +139,7 @@ This example is designed to show exactly what Decision Frameworks adds that Mast
 
 **Option A — Claude Cowork (recommended)**
 1. Install `mastermind.skill` from this repo (Settings → Capabilities → Skills → Install from file)
-2. Install the Decision Frameworks skill from the [decision-frameworks skill](https://github.com/Sroyal7) repo
+2. Install `decision-frameworks.skill` from this repo (same folder, same method)
 3. Both are active immediately. Use `/mastermind` first, escalate with `/` commands when needed.
 
 **Option B — Manual**

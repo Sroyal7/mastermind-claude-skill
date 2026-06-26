@@ -128,10 +128,16 @@ Your question
 
 ### Option A — .skill file (Recommended, 60 seconds)
 
+**Install Mastermind:**
 1. Download [`mastermind.skill`](./mastermind.skill) from this repo
 2. Open Claude Cowork → **Settings → Capabilities → Skills**
-3. Click **Install from file** → select the `.skill` file
+3. Click **Install from file** → select `mastermind.skill`
 4. Done. Type `/mastermind` in any session.
+
+**Install Decision Frameworks (optional but recommended for high-stakes decisions):**
+1. Download [`decision-frameworks.skill`](./decision-frameworks.skill) from this repo
+2. Same path: **Settings → Capabilities → Skills → Install from file**
+3. Done. Now you have the full stack — see [DECISION_FRAMEWORKS.md](./DECISION_FRAMEWORKS.md).
 
 ### Option B — Manual
 
@@ -210,6 +216,7 @@ Modeled on **Sergio Marquina (The Professor)** from *Money Heist* — the thinki
 | `README.md` | This file — overview, before/after, install guide |
 | `SKILL.md` | Full skill prompt — copy this for manual install |
 | `mastermind.skill` | Installable `.skill` file for Claude Cowork |
+| `decision-frameworks.skill` | Decision Frameworks skill — install alongside Mastermind for the full stack |
 | `DEMO.md` | 3 full before/after examples (career, business, plan evaluation) |
 | `DECISION_FRAMEWORKS.md` | Combined Mastermind + Decision Frameworks protocol + worked example |
 | `LICENSE` | MIT |
